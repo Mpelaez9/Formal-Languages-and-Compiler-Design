@@ -1,0 +1,12 @@
+Symbol Table as:     Hash Table
+Symbol               ST Position
+a                    0
+b                    1
+i                    8
+isPrime              10
+num                  13
+result               21
+0                    48
+2                    50
+"Is not prime"       62
+"Is prime"           85

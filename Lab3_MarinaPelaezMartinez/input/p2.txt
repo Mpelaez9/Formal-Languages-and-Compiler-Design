@@ -1,0 +1,18 @@
+#Program that finds if a number is prime
+
+program
+reed integer num;
+variable boolen isPrime;
+
+loopStart i from 2 to num
+	variable integer result;
+	if (result==0) then isPrime = false;
+	else isPrime = true;
+endLoop
+
+a + b
+
+if (isPrime==true) then prints "Is prime";
+else prints "Is not prime";
+
+endProgram

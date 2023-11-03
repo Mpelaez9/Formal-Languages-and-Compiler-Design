@@ -1,0 +1,13 @@
+#Program that contains two errors.
+
+var a = 10;
+var b = 5;
+var c                    # Missing ;
+
+if (a > b) {
+    c = a;
+} else {
+    c = d;              # "d" is not declared.
+}
+
+print(c);

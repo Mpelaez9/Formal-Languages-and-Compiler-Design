@@ -1,0 +1,10 @@
+#Program that given a number, calculates it's factorial.
+
+var n = 5;
+var fact = 1;
+
+for (var i = 1; i <= n; i++) {
+    fact = fact * i;
+}
+
+print("The factorial is: " + fact);

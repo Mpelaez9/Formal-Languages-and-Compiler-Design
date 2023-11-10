@@ -1,0 +1,12 @@
+Symbol Table as:     Hash Table
+Symbol               ST Position
+a                    0
+b                    1
+i                    8
+esPrimo              10
+n                    13
+resultado            21
+0                    48
+2                    50
+"No es primo"        62
+"Es primo"           85

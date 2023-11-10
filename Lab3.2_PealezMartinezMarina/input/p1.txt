@@ -1,0 +1,12 @@
+programa
+leer entero a;
+leer entero b;
+variable entero resultado;
+
+fi (a>=b) entonces resultado=a fiend;
+filse (b>=a) entonces resultado=b fiend;
+
+imprime "El resultado es:";
+imprime resultado;
+
+finprograma

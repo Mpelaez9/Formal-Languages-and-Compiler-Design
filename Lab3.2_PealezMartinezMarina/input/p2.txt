@@ -1,0 +1,16 @@
+programa
+leer entero n;
+variable booleano esPrimo;
+
+iniciobucle i desde 2 hasta n
+	variable entero resultado;
+	fi (resultado==0) entonces esPrimo = falso;
+	lse esPrimo = verdadero;
+finbucle
+
+a + b
+
+fi (esPrimo==verdadero) entonces imprime "Es primo";
+lse imprime "No es primo";
+
+finprograma

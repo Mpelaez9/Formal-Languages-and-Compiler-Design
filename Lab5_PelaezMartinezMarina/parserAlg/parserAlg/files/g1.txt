@@ -1,0 +1,11 @@
+SET OF NON-TERMINALS
+A,B,C,S
+SET OF TERMINALS
+a,b
+PRODUCTIONS
+S -> a A B C
+A -> a | b b
+B -> a | c
+C -> b | c
+STARTING SYMBOL
+S

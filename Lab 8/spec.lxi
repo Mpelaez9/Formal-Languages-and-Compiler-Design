@@ -1,0 +1,83 @@
+%{
+#include <math.h>
+int lines = 0;
+%}
+%option noyywrap
+
+DIGIT		[0-9]
+NUMBER	[1-9][O-9]*
+STRING 	\"[a-zA-Z]*\"
+CONSTANT	{STRING}|{DIGIT}
+ID		[a-zA-Z][a-zA-Z0-9]*
+
+%%
+
+"programa"		{printf( "Reserved word: %s\n", yytext ); }
+"finprograma"		{printf( "Reserved word: %s\n", yytext ); }
+"listo"		{printf( "Reserved word: %s\n", yytext ); }
+"leer"		{printf( "Reserved word: %s\n", yytext ); }
+"variable"		{printf( "Reserved word: %s\n", yytext ); }
+"entero"		{printf( "Reserved word: %s\n", yytext ); }
+"doble"		{printf( "Reserved word: %s\n", yytext ); }
+"booleano"		{printf( "Reserved word: %s\n", yytext ); }
+"char"		{printf( "Reserved word: %s\n", yytext ); }
+"fi"		{printf( "Reserved word: %s\n", yytext ); }
+"filse"		{printf( "Reserved word: %s\n", yytext );} 
+"lse"		{printf( "Reserved word: %s\n", yytext ); }
+"fiend"		{printf( "Reserved word: %s\n", yytext );} 
+"entonces"		{printf( "Reserved word: %s\n", yytext ); }
+"iniciobucle"		{printf( "Reserved word: %s\n", yytext ); }
+"finbucle"		{printf( "Reserved word: %s\n", yytext ); }
+"desde"		{printf( "Reserved word: %s\n", yytext ); }
+"hasta"		{printf( "Reserved word: %s\n", yytext ); }
+"imprime"		{printf( "Reserved word: %s\n", yytext ); }
+"devolver"		{printf( "Reserved word: %s\n", yytext ); }
+"romper"		{printf( "Reserved word: %s\n", yytext ); }
+"and"		{printf( "Operator: %s\n", yytext ); }
+"or"		{printf( "Operator: %s\n", yytext ); }
+
+{ID}		{printf( "Identifier: %s\n", yytext ); }
+
+{CONSTANT}		{printf( "Constant: %s\n", yytext ); }
+
+"+"		{printf( "Operator: %s\n", yytext ); }
+"-"		{printf( "Operator: %s\n", yytext ); }
+"*"		{printf( "Operator: %s\n", yytext ); }
+"/"		{printf( "Operator: %s\n", yytext ); }
+"%"		{printf( "Operator: %s\n", yytext ); }
+"<="		{printf( "Operator: %s\n", yytext ); }
+"<"		{printf( "Operator: %s\n", yytext ); }
+"=="		{printf( "Operator: %s\n", yytext ); }
+">="		{printf( "Operator: %s\n", yytext ); }
+">"		{printf( "Operator: %s\n", yytext ); }
+"="		{printf( "Operator: %s\n", yytext ); }
+"+="		{printf( "Operator: %s\n", yytext ); }
+"-="		{printf( "Operator: %s\n", yytext ); }
+
+"("		{printf( "Separator: %s\n", yytext ); }
+")"		{printf( "Separator: %s\n", yytext ); }
+"["		{printf( "Separator: %s\n", yytext ); }
+"]"		{printf( "Separator: %s\n", yytext ); }
+"{"		{printf( "Separator: %s\n", yytext ); }
+"}"		{printf( "Separator: %s\n", yytext ); }
+":"		{printf( "Separator: %s\n", yytext ); }
+";"		{printf( "Separator: %s\n", yytext ); }
+
+[ \t]+	
+[\n]+		{++lines;}
+
+.		{printf( "Illegal symbol at line %d\n", lines); return -1;}
+
+
+%%
+main( argc, argv ) 
+int argc; 
+char **argv;
+{ 
+    ++argv, --argc; /* skip over program name */ 
+    if ( argc > 0 ) 
+    yyin = fopen( argv[0], "r" ); 
+    else 
+     yyin = stdin; 
+    yylex(); 
+} 
